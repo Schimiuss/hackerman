@@ -1,4 +1,4 @@
-package com.schimibussiness.hackerman;
+package com.schimibusiness.hackerman;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
