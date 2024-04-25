@@ -1,50 +1,44 @@
 package com.schimibusiness.hackerman.services;
 
+import com.schimibusiness.hackerman.models.Document;
+import com.schimibusiness.hackerman.repositories.DocumentRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class MainService {
 
-    public ArrayList<String> getAllEndpoints() throws IOException {
-    ArrayList<String> urls = readFileLines("C:\\Users\\schim\\OneDrive\\Plocha\\hackerman\\src\\main\\java\\com\\schimibusiness\\hackerman\\services\\urls.txt");
+    private final DocumentRepository documentRepository;
 
-    return urls;
+    public void fileUploader(String path, String name) throws IOException {
+        File file = new File(path);
+        byte[] bytes = Files.readAllBytes(Paths.get(path));
+        Document document = new Document();
+        document.setContent(bytes);
+        document.setName(name);
+        documentRepository.save(document);
     }
 
-    public static ArrayList<String> readFileLines(String filePath) throws IOException {
-        ArrayList<String> lines = new ArrayList<>();
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(filePath));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                lines.add(line);
-            }
-        } finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        return lines;
+    public String fileReturner(String name){
+        Optional<Document> document = documentRepository.findByName(name);
+        return Arrays.toString(document.get().getContent());
     }
 
-    public void setUser(String name, String adr){
-        System.setProperty("NAME", name);
-        System.setProperty("ADR", adr);
+    public byte[] getFileBytes(String name){
+        Optional<Document> docOpt = documentRepository.findByName(name);
+        return docOpt.map(Document::getContent).orElse(null);
     }
 
-    //theoretical
-    public void fillDatabase(){
-
+    // Theoretical
+    public void fillDatabase() {
+        // todo(if I decide to make that), use some kind of functionality for the database, definitely h2 database, would be cool if I knew how to use that, hehe
     }
-    //todo(if I decide to make that), use some kind of functionality for the database, definitelly h2 database, would be cool if I knew how to use that, hehe
-
-
-
 }
