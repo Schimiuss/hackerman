@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 <body style="background-color: #131312">
     <div class="giga-container">
         <div id="container">
             <div class="container1">
-                <img src="../static/images/sigil.png" class="sigil">
-
-    <!--siggil here-->
-                <button class="hrefbutt"><a class="aa">Skills</a></button>
-                <button class="hrefbutt"><a class="aa">Education</a></button>
-                <button class="hrefbutt"><a class="aa">About me</a></button>
-                <button class="hrefbutt"><a class="aa">Certificates</a></button>        
+                <img th:src="@{/images/sigil.png}" class="sigil">
+                <a th:href="@{/business/home}" class="hrefbutt">About me</a>
+                <a th:href="@{/business/skills}" class="hrefbutt">Skills</a>
+                <a th:href="@{/business/download}" class="hrefbutt">Documents</a>
+                <a th:href="@{/contact}" class="hrefbutt">Contact Me</a>
             </div>
             <div class="container2">
 

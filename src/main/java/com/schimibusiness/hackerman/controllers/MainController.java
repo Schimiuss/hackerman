@@ -47,6 +47,10 @@ public class MainController {
         return "resume";
     }
 
+    @GetMapping("/download")
+    public String showDownload(){
+        return "downloads";
+    }
     @GetMapping("/download/{fileName}")
     public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable String fileName) {
         byte[] fileBytes = service.getFileBytes(fileName);

@@ -24,9 +24,23 @@ public class HackermanApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws IOException {
-		String path = "Personal_files/CV_2024_02_final.pdf";
-		String name = "cv";
+		String path1 = "Personal_files/CV_2024_02_final.pdf";
+		String name1 = "cv.pdf";
 
-		mainService.fileUploader(path, name);
+		String path2 = "Personal_files/CodeCool_certificate.pdf";
+		String name2 = "CodeCool_certificate.pdf";
+
+		String path3 = "Personal_files/GFA_certificate.pdf";
+		String name3 = "GFA_certificate.pdf";
+
+		String path4 = "Personal_files/Stanag_3_certificate.pdf";
+		String name4 = "Stanag_3_certificate.pdf";
+
+		mainService.fileUploader(path1, name1);
+		mainService.fileUploader(path2, name2);
+		mainService.fileUploader(path3, name3);
+		mainService.fileUploader(path4, name4);
+
+
 	}
 }

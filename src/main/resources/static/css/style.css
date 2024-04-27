@@ -2,10 +2,12 @@
     font-family: exquite;
     src:url("../fonts/Exquite.otf")
 }
+
 @font-face{
     font-family: klotee;
     src:url("../fonts/Klotee.otf")
 }
+
 body, html {
         margin: 0;
         padding: 0;
@@ -18,13 +20,18 @@ body, html {
     height: 100%;
     display: flex;
 }
+
 .container1 {
     width: 10vw;
     height: 100vh;
     background-color: #131312;
     position: fixed;
+    border-right-style: solid;
+    border-right-color: white;
+    border-width: 0.1vw;
     
 }
+
 .container2 {
     width: 90vw;
     height: 100vh;
@@ -34,50 +41,114 @@ body, html {
     background-size:auto;
     background-attachment: fixed;
 }
+
 .container3{
     width: 90vw;
     height: 100vh;
     text-align: center;
     margin-left: 10vw;
     background-color: #131312;
-    
 }
+
+.container4{
+    display: flex;
+    width: 90vw;
+    height: 100vh;
+    margin-left: 10vw;
+    background-color: #131312;  
+    justify-content: center;
+}
+
 p.text{
     color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 2vh;
     text-align: justify;
     font-family: klotee;
     padding: 2% 5% 0% 5%;
 }
+
 .hrefbutt {
     width: 8vw;
-    display: block;
-    text-align: left;
-    padding: 3%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     margin-bottom: 2%;
     border-style: none;
-    font-size: 2vh;
-    background-color:rgba(255,255,255,0.4);
-    color: white;
-    border-style: solid;
-    border-color: white;
+    font-size: 0.75vw;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: 2vh;
     font-family: klotee;
-    text-align: center;
+    transition: width 0.3s ease;
+    text-decoration: none; 
 }
-.hrefbutt:hover{
-    background-color: #FFFFFF;
+
+.hrefbutt:hover {
+    background-color: #ffffff;
     color: black;
-    border-color: black;
-    font-weight: bold;
+    font-weight: bolder;
+    width: 10vw;
 }
+
 .sigil{
     width: 10vw;
     filter: invert(1);
 }
+
 .gigacontainer{
     width: 100%;
     display: block;
 }
+
+.downbutt {
+    width: 16vw;
+    height: 70vh;
+    border-style: none;
+    margin-top: 0vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    transition: height 0.3s ease, width 0.3s ease, margin 0.3s ease; 
+}
+
+.downbutt:hover {
+    height: 95vh;
+    width: 17vw;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#cv {
+/*    margin-left: 2vw;*/
+/*    margin-top: 0;*/
+    background-image: url(../images/buttons/CV_2024_02_final.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#codecool {
+/*    margin-left: 2vw;*/
+/*    margin-top: 0;*/
+    background-image: url(../images/buttons/CodeCool_certificate.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#gfa {
+/*    margin-left: 2vw;*/
+/*    margin-top: 0;*/
+    background-image: url(../images/buttons/GFA_certificate.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#stng {
+/*    margin-left: 2vw;*/
+/*    margin-top: 0;*/
+    background-image: url(../images/buttons/Stanag_3_certificate.jpg);
+    background-size: cover;
+    background-position: center;
+}
+

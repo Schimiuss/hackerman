@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link rel=stylesheet type="text/css" href="../static/css/style.css">
+</head>
+<body style="background-color: #131312">
+    <div class="giga-container">
+        <div id="container">
+            <div class="container1">
+                <img th:src="@{/images/sigil.png}" class="sigil">
+                <a th:href="@{/business/home}" class="hrefbutt">About me</a>
+                <a th:href="@{/business/skills}" class="hrefbutt">Skills</a>
+                <a th:href="@{/business/download}" class="hrefbutt">Documents</a>
+                <a th:href="@{/contact}" class="hrefbutt">Contact Me</a>
+            </div>
+
+        </div>    
+        <div class="container4"> 
+            <a th:href="@{/business/download/cv.pdf}">
+                <button id="cv" class="downbutt"></button>
+            </a>
+            <a th:href="@{/business/download/cv.pdf}">
+                <button id="cv" class="downbutt"></button>
+            </a>
+            <a th:href="@{/business/download/CodeCool_certificate.pdf}">
+                <button id="codecool" class="downbutt"></button>
+            </a>
+            <a th:href="@{/business/download/GFA_certificate.pdf}">
+                <button id="gfa" class="downbutt"></button>
+            </a>
+            <a th:href="@{/business/download/Stanag_3_certificate.pdf}">
+                <button id="stng" class="downbutt"></button>
+            </a>
+        </div>
+    </div>    
+    
+</body>
+</html>
